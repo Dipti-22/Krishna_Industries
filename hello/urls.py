@@ -25,4 +25,4 @@ admin.site.index_title = "Welcome to KK Industries"
 urlpatterns = [
     path('admin/', admin.site.urls),     # this will send us to the admin site 
     path('', include('home.urls'))       # this will send the user to the home [ our appilication basic page]
-]   
+]    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
