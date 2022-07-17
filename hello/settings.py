@@ -144,6 +144,7 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+STATIC_URL = 'https://bucket-name.s3.amazonaws.com/static/'
+ADMIN_MEDIA_PREFIX = 'https://bucket-name.s3.amazonaws.com/static/admin/'
 
 django_heroku.settings(locals())
