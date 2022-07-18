@@ -19,8 +19,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.views.static import serve
-from django.conf.urls import url
 
 
 # to change the admin tag line in the admin documentation 
@@ -32,8 +30,4 @@ admin.site.index_title = "Welcome to KK Industries"
 urlpatterns = [
     path('admin/', admin.site.urls),     # this will send us to the admin site 
     path('', include('home.urls')),       # this will send the user to the home [ our appilication basic page]
-    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
-]    
-
-urlpatterns = urlpatterns+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+]
